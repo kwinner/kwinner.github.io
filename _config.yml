@@ -10,15 +10,17 @@ locale                   : "en-US"
 title                    : "Kevin Winner"
 title_separator          : "-"
 name                     : &name "Kevin Winner"
-description              : &description "PhD Candidate at UMass Amherst"
+description              : &description "Postdoctoral researcher at Yale University"
 url                      : https://kwinner.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "kwinner.github.io"
+repository               : "kwinner/kwinner.github.io"
 root                     : "https://kwinner.github.io"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
+future                   : true
 read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
+talkmap_link             : false #change to true to add link to talkmap on talks page
 comments:
   provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
   disqus:
@@ -46,7 +48,7 @@ staticman:
       options:
         format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
 atom_feed:
-  path                   : # blank (default) uses feed.xml
+  path                   : # blank (default) is excluded. Recommended default is feed.xml
 
 # SEO Related
 google_site_verification :
@@ -81,11 +83,13 @@ analytics:
 author:
   name             : "Kevin Winner"
   avatar           : "profile.png"
-  bio              : "Computer Science PhD candidate at UMass Amherst"
-  location         : "Amherst, MA"
+  bio              : "Postdoctoral Researcher at Yale University Center for Biodiversity and Global Change"
+  location         : "New Haven, CT"
   employer         :
+  pubmed           : 
   googlescholar    : "http://scholar.google.com/citations?user=dItlYf8AAAAJ"
   email            :
+  researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
   codepen          :
@@ -97,9 +101,10 @@ author:
   google_plus      :
   keybase          :
   instagram        :
+  impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
   linkedin         :
-  orcid            : 
+  orcid            : "https://orcid.org/0000-0002-8838-8905"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
@@ -118,7 +123,6 @@ include:
   - .htaccess
   - _pages
   - files
-  - images
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -126,22 +130,24 @@ exclude:
   - .bundle
   - .jekyll-assets-cache
   - .sass-cache
-  - assets/js/plugins
-  - assets/js/_main.js
-  - assets/js/vendor
-  - Capfile
   - CHANGELOG
-  - config
+  - Capfile
   - Gemfile
   - Gruntfile.js
-  - gulpfile.js
   - LICENSE
+  - README
+  - Rakefile
+  - assets/js/_main.js
+  - assets/js/plugins
+  - assets/js/vendor
+  - config
+  - gulpfile.js
   - log
   - node_modules
   - package.json
-  - Rakefile
-  - README
   - tmp
+  - markdown_generator
+  - vendor
 keep_files:
   - .git
   - .svn
@@ -172,16 +178,16 @@ kramdown:
 # Collections
 collections:
   teaching:
-    output: true
+    output: false
     permalink: /:collection/:path/
   publications:
     output: true
     permalink: /:collection/:path/
   portfolio:
-    output: true
+    output: false
     permalink: /:collection/:path/
   talks:
-    output: true
+    output: false
     permalink: /:collection/:path/
 
 
@@ -259,14 +265,14 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
-  - jekyll-feed
+  # - jekyll-feed
   - jekyll-redirect-from
 # mimic GitHub Pages with --safe
 whitelist:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
-  - jekyll-feed
+  # - jekyll-feed
   - jemoji
 
 
@@ -305,5 +311,3 @@ compress_html:
   clippings: all
   ignore:
     envs: development
-
-github: [metadata]
